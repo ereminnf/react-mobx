@@ -7,7 +7,7 @@ export type IAppProps = {
 
 }
 
-const App: React.FC<IAppProps> = observer(({ }) => {
+const App: React.FC<IAppProps> = ({ }) => {
     console.log('render');
 
     return (
@@ -31,8 +31,8 @@ const App: React.FC<IAppProps> = observer(({ }) => {
             </div>
         </div>
     );
-})
+}
 
 App.displayName = 'App'
 
-export { App };
+export default observer(App);

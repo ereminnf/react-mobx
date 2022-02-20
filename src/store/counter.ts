@@ -1,4 +1,4 @@
-import { autorun, computed, configure, makeAutoObservable, makeObservable, observable, when } from "mobx"
+import { autorun, computed, configure, makeAutoObservable, makeObservable, observable, spy, when } from "mobx"
 
 class Counter {
     @observable count = 0
@@ -17,6 +17,10 @@ class Counter {
         }, {
             name: 'autorun count',
             delay: 1000
+        })
+
+        spy((e) => {
+            console.log(e);
         })
     }
 
