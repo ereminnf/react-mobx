@@ -12,7 +12,7 @@ const App: React.FC<IAppProps> = observer(({ }) => {
 
     return (
         <div className="App">
-            {counter.total()} <br />
+            {counter.total} <br />
             {counter.count}
             <div>
                 <button onClick={() => counter.inc()}>inc</button>
@@ -26,7 +26,6 @@ const App: React.FC<IAppProps> = observer(({ }) => {
                         <input type="checkbox" checked={item.complete} onChange={() => todo.toggle(item)} />
                         {item.title}
                         <button onClick={() => todo.remove(item.id)}>remove</button>
-                        {item.complete.toString()}
                     </div>
                 )}
             </div>

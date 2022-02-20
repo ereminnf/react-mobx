@@ -1,11 +1,23 @@
-import { computed, makeAutoObservable, makeObservable } from "mobx"
+import { autorun, computed, configure, makeAutoObservable, makeObservable, observable, when } from "mobx"
 
 class Counter {
-    count = 0
-    timer = 60
+    @observable count = 0
+    @observable timer = 60
 
     constructor() {
         makeAutoObservable(this)
+
+        when(
+            () => this.count > 2,
+            () => alert('> 2')
+        )
+
+        autorun(() => {
+            console.log(this.count)
+        }, {
+            name: 'autorun count',
+            delay: 1000
+        })
     }
 
     inc() {
@@ -16,7 +28,7 @@ class Counter {
         this.count = this.count - 1
     }
 
-    /* get */ @computed total() {
+    @computed get total() {
         return `Total = ${this.timer + this.count}`
     }
 }
