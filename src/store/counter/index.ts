@@ -1,6 +1,6 @@
 import { autorun, computed, configure, makeAutoObservable, makeObservable, observable, spy, when } from "mobx"
 
-class Counter {
+class CounterStore {
     @observable count = 0
     @observable timer = 60
 
@@ -19,9 +19,9 @@ class Counter {
             delay: 1000
         })
 
-        spy((e) => {
-            console.log(e);
-        })
+        // spy((e) => {
+        //     console.log(e);
+        // })
     }
 
     inc() {
@@ -37,4 +37,4 @@ class Counter {
     }
 }
 
-export default new Counter()
+export default CounterStore

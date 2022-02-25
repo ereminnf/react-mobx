@@ -1,6 +1,6 @@
 import { action, computed, makeAutoObservable, makeObservable, observable, runInAction, when } from "mobx"
 
-class Counter {
+class TodoStore {
     todos = [
         { id: 111, title: 'title12', complete: false },
         { id: 222, title: 'title2', complete: false },
@@ -8,7 +8,7 @@ class Counter {
     ]
 
     constructor() {
-        makeAutoObservable(this, { todos: observable, add: action, /*computed*/ }, { deep: true, name: 'CounterStore' })
+        makeAutoObservable(this, { todos: observable, add: action, /*computed*/ }, { deep: true, name: 'TodoStore' })
     }
 
     add(todo: typeof this.todos[0]) {
@@ -43,4 +43,4 @@ class Counter {
     }
 }
 
-export default new Counter()
+export default TodoStore

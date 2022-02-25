@@ -22,8 +22,10 @@
     "experimentalDecorators": true,
     "useDefineForClassFields": true,
     "noImplicitAny": false,
+    "typeRoots": []
   },
   "include": [
-    "src"
+    "src",
+    "typings"
   ]
 }

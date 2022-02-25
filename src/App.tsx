@@ -1,14 +1,13 @@
 import { observer } from 'mobx-react';
 import React from 'react';
-import counter from './store/counter';
-import todo from './store/todo';
+import { useStore } from './store';
 
 export type IAppProps = {
 
 }
 
 const App: React.FC<IAppProps> = ({ }) => {
-    console.log('render');
+    const { counter, todo } = useStore()
 
     return (
         <div className="App">
